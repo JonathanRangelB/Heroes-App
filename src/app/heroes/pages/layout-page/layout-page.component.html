@@ -21,12 +21,15 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="sticky top-0 z-2">
     <button mat-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <span class="spacer"></span>
-    <button mat-button><mat-icon>logout</mat-icon>Logout</button>
+    <span>{{ user?.email }}</span>
+    <button mat-button (click)="onLogout()">
+      <mat-icon>logout</mat-icon>Logout
+    </button>
   </mat-toolbar>
 
   <div class="container pt-2">
